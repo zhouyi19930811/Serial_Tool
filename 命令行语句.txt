@@ -1,0 +1,34 @@
+配置环境：
+a.安装PyQt5
+		sudo apt-get install python3-pyqt5
+b.安装qt-designer
+		sudo apt-get install qt5-default qttools5-dev-tools
+c.安装serial模块
+		pip3 install pyserial
+                pip3 install pyqt5
+d.如果报错没有PyQt模块，注意修改pyvenv.cfg文件
+         include-system-site-packages = true，设置加载python的外部模块
+e.利用清华源安装pyqtgraph模块，速度飞起
+         pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pyqtgraph
+
+1.转换图片资源文件：
+
+	pyrcc5 apprcc.qrc -o apprcc_rc.py
+
+2.Ui文件转化成.py文件：
+
+	pyuic5 -o Ui_uu.py uu.ui
+
+	pyuic5 -o ui_QdataForm.py QdataForm.ui
+	pyuic5 -o ui_Qdisplay.py Qdisplay.ui
+	pyuic5 -o ui_QGraph1.py QGraph1.ui
+	pyuic5 -o ui_QGraph2.py QGraph2.ui
+	pyuic5 -o ui_QGraph3.py QGraph3.ui
+	pyuic5 -o ui_QGraph4.py QGraph4.ui
+
+3.打包语句：
+
+	pyinstaller -F -w --icon=myico.ico __init__.py
+
+4.运行
+    sudo /usr/bin/python3.5 /home/zhouyi/serial_ubuntu_V1.1/__init__.py
